@@ -1,7 +1,8 @@
 const question = document.querySelector('#question');
 const choices = document.querySelectorAll('.choice-text');
-const questionCounterText = document.querySelector('#questionCounter');
+const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
+const progressBarFull = document.querySelector('#progressBarFull');
 
 let currentQuestion = {};
 let acceptingAnswers = true; 
@@ -70,11 +71,15 @@ getNewQuestion = () => {
 
     //window.location.assign 새로운 브라우저 불러오기
     if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS){
+        localStorage.setItem('mostRecentScore', score);
         return window.location.assign("./end.html");
     }
 
     questionCounter++;
-    questionCounterText.innerText = `${questionCounter} / ${MAX_QUESTIONS}`;
+    progressText.innerText = `Question ${questionCounter} / ${MAX_QUESTIONS}`;
+
+    //Update the Progress Bar
+    progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];

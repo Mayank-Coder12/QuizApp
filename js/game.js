@@ -102,7 +102,7 @@ choices.forEach( choice => {
         acceptingAnswers = false;
 
         const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset["number"];
+        const selectedAnswer = selectedChoice.dataset["number"]; //data-number="1"에서 1을 의미
 
         let classToApply = 
             selectedAnswer == currentQuestion.answer ?

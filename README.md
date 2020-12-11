@@ -13,7 +13,7 @@
 ### end.html
 
 
-### 포트폴리오 설명: html, CSS, JavaSript를 이용한 Quiz Site
+### 포트폴리오 설명: html, CSS, JavaScript를 이용한 Quiz Site
 
 
 ### Use Stuff 
